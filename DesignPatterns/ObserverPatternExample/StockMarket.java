@@ -1,8 +1,29 @@
-public interface Stock {
+import java.util.ArrayList;
 
-    void registerObserver(Observer observer);
+public class StockMarket implements Stock {
 
-    void removeObserver(Observer observer);
+    private ArrayList<Observer> observers =
+            new ArrayList<>();
 
-    void notifyObservers();
+    private double stockPrice;
+
+    public void setStockPrice(double stockPrice) {
+        this.stockPrice = stockPrice;
+        notifyObservers();
+    }
+
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void notifyObservers() {
+
+        for(Observer observer : observers) {
+            observer.update(stockPrice);
+        }
+    }
 }
