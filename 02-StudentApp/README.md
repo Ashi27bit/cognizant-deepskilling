@@ -1,7 +1,7 @@
 # Lab 2 - StudentApp (Components)
 
 ## Objective
-Create `StudentApp` with three components — Home, About, Contact — each displaying a welcome message, and render all three in App.js.
+Create `StudentApp` with three components - Home, About, Contact - each displaying a welcome message, and render all three in App.js.
 
 ## Steps
 ```bash
